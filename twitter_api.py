@@ -1,9 +1,10 @@
 import tweepy
+import pandas as pd
 
 class TwitterAPI:
-    def __init__(self,args: dict):
-        auth = tweepy.OAuthHandler(args['api_key'],args['api_key_secret'])
-        auth.set_access_token(args['access_token'],args['access_token_secret'])
+    def __init__(self,keys: dict):
+        auth = tweepy.OAuthHandler(keys['api_key'],keys['api_key_secret'])
+        auth.set_access_token(keys['access_token'],keys['access_token_secret'])
         self.api = tweepy.API(auth)
     
     def get_home_timeline_tweets(self):
