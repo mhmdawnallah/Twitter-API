@@ -31,7 +31,7 @@ class TwitterAPI:
     def send_direct_message(self, user: str, message: str):
         self.api.send_direct_message(user, message)
 
-    def to_csv(self, tweets):
+    def to_csv(self, tweets: dict):
         df = pd.DataFrame(tweets)
         df.to_csv('tweets.csv', index=False)
 
